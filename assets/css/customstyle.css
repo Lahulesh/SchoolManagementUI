@@ -1,0 +1,88 @@
+#imagePreview {
+    width: 500px;
+    height: 270px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    display: none;
+}
+
+/* Notification Css */
+
+.side-alert {
+    position: fixed;
+    right: -350px;
+    /* Initially hidden off-screen */
+    bottom: 20px;
+    width: 300px;
+    padding: 15px;
+    text-align: left;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: right 0.5s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+.side-alert.show {
+    right: 20px;
+    /* Slide in */
+}
+
+.side-alert .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.side-alert .side-alert-icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Success */
+.side-alert.success {
+    background-color: #4CAF50;
+    /* Green */
+    color: white;
+}
+
+.side-alert.success .side-alert-icon::before {
+    content: "\f00c";
+    /* FontAwesome check icon (fa-check) */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* Warning */
+.side-alert.warning {
+    background-color: #FFC107;
+    /* Amber */
+    color: black;
+}
+
+.side-alert.warning .side-alert-icon::before {
+    content: "\f071";
+    /* FontAwesome exclamation icon (fa-exclamation-triangle) */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* Error */
+.side-alert.error {
+    background-color: #F44336;
+    /* Red */
+    color: white;
+}
+
+.side-alert.error .side-alert-icon::before {
+    content: "\f06a";
+    /* FontAwesome exclamation-circle icon (fa-exclamation-circle) */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}

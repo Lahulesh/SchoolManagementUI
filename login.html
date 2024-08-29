@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Login - Pos admin template</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.jpg">
+    <link rel="stylesheet" href="assets/css/allstyle.css">
+    <link rel="stylesheet" href="assets/css/customstyle.css">
+    <!-- importantScriptlink -->
+    <script src="assets/backend/jwt.js" ></script>
+    <script src="assets/backend/login.js" ></script>
+</head>
+
+<body class="account-page">
+
+    <div class="main-wrapper">
+        <div class="account-content">
+            <div class="login-wrapper">
+                <div class="login-content">
+                    <div class="login-userset">
+                        <div class="login-logo">
+                            <img src="assets/img/logo.png" alt="img">
+                        </div>
+                        <div class="login-userheading">
+                            <h3>Sign In</h3>
+                            <h4>Please login to your account</h4>
+                        </div>
+                        <form id="loginForm">
+                            <div class="form-login">
+                                <label>User Name</label>
+                                <div class="form-addons">
+                                    <input type="text" id="username" maxlength="15" minlength="3" autocomplete="on" placeholder="Enter User Name">
+                                    <img src="assets/img/icons/users1.svg" alt="img">
+                                </div>
+                            </div>
+                            <div class="form-login">
+                                <label>Password</label>
+                                <div class="pass-group">
+                                    <input type="password" class="pass-input" id="password" maxlength="8" placeholder="Enter Password">
+                                    <span class="fas toggle-password fa-eye-slash"></span>
+                                </div>
+                            </div>
+                            <div class="form-login">
+                                <label>Branch Code</label>
+                                <div class="form-addons">
+                                    <input type="text" id="branchcode" maxlength="3" autocomplete="on" placeholder="Enter Branch Code">
+                                    <img src="assets/img/icons/git-branch-thin-svgrepo-com.svg" alt="img">
+                                </div>
+                            </div>
+                            <div class="form-login">
+                                <div class="alreadyuser">
+                                    <h4><a href="forgetpassword.html" class="hover-a">Forgot Password?</a></h4>
+                                </div>
+                            </div>
+                            <div class="form-login">
+                                <!-- <a class="btn btn-login" href="dashboard.html">Sign In</a> -->
+                                <button type="submit" class="btn btn-login" id="login">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="login-img">
+                    <img src="assets/img/login.jpg" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="side-alert" class="side-alert">
+        <span id="side-alert-icon"></span>
+        <span id="side-alert-message"></span>
+        <button id="close-alert" class="close-btn">&times;</button>
+    </div>
+
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/feather.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/customnotification.js"></script>
+    
+</body>
+
+</html>

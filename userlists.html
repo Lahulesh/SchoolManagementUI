@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, invoice, html5, responsive, Projects">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Dreams Pos admin template</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.jpg">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+
+    <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/customstyle.css">
+    <script src="assets/js/customnotification.js"></script>
+    
+    <!-- <script src="assets/backend/apiConfig.js" type="module"></script> -->
+    <script src="assets/backend/userlists.js"></script>
+    
+</head>
+
+<body>
+    <div id="global-loader">
+        <div class="whirly-loader"> </div>
+    </div>
+    <div id="side-alert" class="side-alert">
+        <span id="side-alert-icon"></span>
+        <span id="side-alert-message"></span>
+        <button id="close-alert" class="close-btn">&times;</button>
+    </div>
+    <div class="main-wrapper">
+
+        <div class="header">
+
+            <div class="header-left active">
+                <a href="dashboard.html" class="logo">
+                    <img src="assets/img/logo.png" alt="">
+                </a>
+                <a href="dashboard.html" class="logo-small">
+                    <img src="assets/img/logo-small.png" alt="">
+                </a>
+                <a id="toggle_btn" href="javascript:void(0);">
+                </a>
+            </div>
+
+            <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+                <span class="bar-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+
+            <ul class="nav user-menu">
+
+                <li class="nav-item dropdown has-arrow main-drop">
+                    <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
+                        <span class="user-img"><img src="assets/img/profiles/avator1.jpg" alt="">
+                            <span class="status online"></span></span>
+                    </a>
+                    <div class="dropdown-menu menu-drop-user">
+                        <div class="profilename">
+                            <div class="profileset">
+                                <span class="user-img"><img src="assets/img/profiles/avator1.jpg" alt="">
+                                    <span class="online"></span></span>
+                                <div class="profilesets">
+                                    <h6 id="userNameDisplay">Demo</h6>
+                                    <h5 id="userRoleDisplay">Admin</h5>
+                                </div>
+                            </div>
+                            <hr class="m-0">
+                            <a class="dropdown-item" href="profile.html"> <i class="me-2" data-feather="user"></i> My
+                                Profile</a>
+                            <a class="dropdown-item" href="generalsettings.html"><i class="me-2"
+                                    data-feather="settings"></i>Settings</a>
+                            <hr class="m-0">
+                            <button class="dropdown-item logout pb-0" id="logOut"><img src="assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div class="dropdown mobile-user-menu">
+                <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="generalsettings.html">Settings</a>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li>
+                            <a href="dashboard.html"><img src="assets/img/icons/dashboard.svg" alt="img"><span>
+                                    Dashboard</span> </a>
+                        </li>
+                        <li>
+                            <a href="branches.html"><i data-feather="layers"></i><span> Branches</span> </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);"><img src="assets/img/icons/users1.svg" alt="img"><span>
+                                    Users</span> <span class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="userlists.html" class="active">Users List</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-wrapper">
+            <div class="content">
+                <div class="page-header">
+                    <div class="page-title">
+                        <h4>User List</h4>
+                        <h6>Manage your User</h6>
+                    </div>
+                    <div class="page-btn">
+                        <button type="button" id="formTitle" class="btn btn-added" data-bs-toggle="modal"
+                            data-bs-target="#addupdateuser"><img src="assets/img/icons/plus.svg" alt="img"> Add
+                            User</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-top">
+                            <div class="search-set">
+                                <div class="search-input">
+                                    <a class="btn btn-searchset"><img src="assets/img/icons/search-white.svg"
+                                            alt="img"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table  datanew" id="usersTable">
+                                <thead>
+                                    <tr>
+                                        <th>User Name</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>User Created Date</th>
+                                        <th>User Updated Date</th>
+                                        <th>User Login Time</th>
+                                        <th>User Logout Time</th>
+                                        <th>Branch Code</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="addupdateuser" tabindex="-1" aria-labelledby="addupdateuser" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <form id="userForm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><span id=statusMessage>Create</span> User</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>User Name</label>
+                                    <input type="hidden" id="updateUserId">
+                                    <input type="text" id="username" maxlength="15" minlength="3" autocomplete="off"
+                                        placeholder="Enter User Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="text" id="phone" maxlength="10" autocomplete="off"
+                                        placeholder="Enter Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" id="email" autocomplete="off" placeholder="Enter Email Address">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Role</label>
+                                    <input type="text" id="roles" value="Admin">
+                                    <!-- <select class="select" id="roles" name="roles">
+                                    </select> -->
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <div class="pass-group">
+                                        <input type="password" class="pass-input" id="password" maxlength="8"
+                                            placeholder="Enter Password">
+                                        <span class="fas toggle-password fa-eye-slash"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-submit" id="userCreate">Submit</button>
+                        <button type="submit" class="btn btn-submit" id="userUpdate" style="display: none;">Update</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelButton">Cancel</button>
+                        <button id="generateButton">Generate User Info</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="assets/js/feather.min.js"></script>
+
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap4.min.js"></script>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+    <script>
+
+        document.getElementById('generateButton').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default action (page refresh)
+            generateUserInfo();
+        });
+
+        function generateUserInfo() {
+            const username = generateUsername();
+            const phone = generatePhoneNumber();
+            const email = generateEmail(username);
+            const roles = generateRoles();
+            const password = generatePassword();
+
+            document.getElementById('username').value = username;
+            document.getElementById('phone').value = phone;
+            document.getElementById('email').value = email;
+            //document.getElementById('roles').value = roles;
+            document.getElementById('password').value = password;
+
+            return false;
+        }
+
+        function generateUsername() {
+            const names = ["John", "Jane", "Mike", "Anna", "Chris", "Emma"];
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomNum = Math.floor(100 + Math.random() * 900); // Random number between 100 and 999
+            return `${randomName}${randomNum}`;
+        }
+
+        function generatePhoneNumber() {
+            const randomNum = () => Math.floor(Math.random() * 10); // Single digit random number
+            return `${randomNum()}${randomNum()}${randomNum()}${randomNum()}${randomNum()}${randomNum()}${randomNum()}${randomNum()}${randomNum()}${randomNum()}`;
+        }
+
+        function generateEmail(username) {
+            const domains = ["example.com", "test.com", "sample.org"];
+            const randomDomain = domains[Math.floor(Math.random() * domains.length)];
+            return `${username.toLowerCase()}@${randomDomain}`;
+        }
+
+        function generateRoles() {
+            const roles = ["Admin", "User", "Editor", "Viewer"];
+            const randomRole = roles[Math.floor(Math.random() * roles.length)];
+            return randomRole;
+        }
+
+        function generatePassword() {
+            const chars = "ABCDEabcde012#@!@#$#%^&*()";
+            let password = "";
+            for (let i = 0; i < 8; i++) { // Generate an 8-character password
+                password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return password;
+        }
+    </script>
+    
+
+    <script>
+        document.getElementById('cancelButton').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default action (page refresh)
+            ClearFields();
+        });
+        document.getElementById("addupdateuser").addEventListener('hidden.bs.modal', function () {
+            resetModal();
+        });
+
+
+        function ClearFields() {
+            document.getElementById("userForm").reset();
+            document.getElementById("username").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("email").value = "";
+            // const rolesSelect = document.getElementById("roles");
+            // rolesSelect.selectedIndex = 0;
+            document.getElementById("password").value = "";
+        }
+        function resetModal() {
+            document.getElementById("userForm").reset(); // Reset form fields
+            document.getElementById("statusMessage").innerText = "Create"; // Reset modal title
+            document.getElementById("userCreate").style.display = "block"; // Show Create button
+            document.getElementById("userUpdate").style.display = "none"; // Hide Update button
+            document.getElementById("updateUserId").value = ''; // Clear the hidden user ID field
+        }
+        function loadRolesss() {
+            fetch(`https://localhost:7286/api/User/Roles`)
+                .then(response => response.json())
+                .then(roles => {
+                    const rolesSelect = document.getElementById("roles");
+                    rolesSelect.innerHTML = ""; // Clear previous options
+
+                    // Add default "Select" option
+                    const defaultOption = document.createElement("option");
+                    defaultOption.value = "";
+                    defaultOption.textContent = "Select";
+                    rolesSelect.appendChild(defaultOption);
+
+                    // Add roles options
+                    roles.forEach(role => {
+                        const option = document.createElement("option");
+                        option.value = role;
+                        option.textContent = role;
+                        rolesSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error("Error fetching roles:", error));
+        }
+    </script>
+    <script src="assets/backend/jwt.js" ></script>
+    <script src="assets/backend/session.js"></script>
+</body>
+
+</html>
